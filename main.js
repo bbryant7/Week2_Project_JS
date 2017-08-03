@@ -11,20 +11,14 @@ function question1() {
   // Answer:
   let total = 0;
   for (let i = 0; i < data.length; i++) {
-    // console.log(data[i].price);
     total += data[i].price;
-    // let averagePrice = total/data.length;
-    //total = total + data[i].price
   }
   // to see what you want --> consol.log('price', data[0].price); 'price' is just a label to help you see what you want to see
   let averagePrice = total / data.length;
-  // let decimal = averagePrice.toFixed(2);
-  console.log('The average price is '+ averagePrice.toFixed(2) + '.');
+  console.log('The average price is ' + averagePrice.toFixed(2) + '.');
   return averagePrice;
 }
-// Why doesn't the function think 'averagePrice' is defined if I put it inside the loop.
 
-// put return first so you know what you want to return. if you need to return average price, you need a variable. if you know you need to make an avaerage by dividing a total, you'll need to make a 'total' varial
 
 // 2: Show me how to get an array of items that cost between $14.00 and $18.00 USD
 function question2() {
@@ -33,7 +27,9 @@ function question2() {
   for (let i = 0; i < data.length; i++) {
     if (data[i].price >= 14.00 && data[i].price <= 18.00)
       costBetween.push(data[i].title);
+
   }
+
   for (let i = 0; i < costBetween.length; i++) {
     console.log(costBetween[i]);
   }
@@ -45,7 +41,7 @@ function question2() {
 
 // 3: Which item has a "GBP" currency code? Display it's name and price.
 function question3() {
-  // let currency = data[i].currenty_code
+
   for (let i = 0; i < data.length; i++) {
     if (data[i].currency_code === "GBP")
       console.log(data[i].title + " costs " + data[i].price + " pounds.");
@@ -57,8 +53,10 @@ function question3() {
 // 4: Display a list of all items who are made of wood.
 function question4() {
   for (let i = 0; i < data.length; i++) {
-    if (data[i].materials.includes('wood'))
+    if (data[i].materials.includes('wood')) {
       console.log(data[i].title);
+    }
+
   }
 
 }
@@ -68,12 +66,10 @@ function question4() {
 //    Display the name, number of items and the items it is made of.
 function question5() {
   for (var i = 0; i < data.length; i++) {
-    if (data[i].materials.length >= 8)
-    console.log(data[i].title,data[i].materials);
-    // for (let i = 0; i < materials.length; i++) {
-    //   console.log('- '+materials[i])
-    // }
-}
+    if (data[i].materials.length >= 8){
+            console.log(data[i].title +' has ' + data[i].materials.length +' materials.', data[i].materials);
+          }
+  }
 
 }
 
@@ -84,8 +80,8 @@ function question6() {
   let selfMade = [];
   for (var i = 0; i < data.length; i++) {
     if (data[i].who_made === 'i_did')
-    selfMade.push(data[i].title);
+      selfMade.push(data[i].title);
 
   }
-    console.log(selfMade.length +' items were made by their sellers.');
+  console.log(selfMade.length + ' items were made by their sellers.');
 }
